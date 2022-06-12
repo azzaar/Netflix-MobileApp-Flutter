@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/core/colors/colors.dart';
 import 'package:my_app/presentation/downloads/downloads_screen.dart';
 import 'package:my_app/presentation/fastlaugh/fastlaughs_screen.dart';
 import 'package:my_app/presentation/home/home_screen.dart';
@@ -11,22 +10,24 @@ class MainScreenPage extends StatelessWidget {
   MainScreenPage({Key? key}) : super(key: key);
 
   final _pages = [
-    HomeScreen(),
-    NewHotScreen(),
-    FastLaughsScreen(),
-    SearchScreen(),
+    const HomeScreen(),
+    const NewHotScreen(),
+    const FastLaughsScreen(),
+    const SearchScreen(),
     DownloadsScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ValueListenableBuilder(
-          valueListenable: indexChangeNotifier,
-          builder: (context, int index, _) {
-            return _pages[index];
-          }),
-      bottomNavigationBar: BottomNavigationWidget(),
+    return SafeArea(
+      child: Scaffold(
+        body: ValueListenableBuilder(
+            valueListenable: indexChangeNotifier,
+            builder: (context, int index, _) {
+              return _pages[index];
+            }),
+        bottomNavigationBar: const BottomNavigationWidget(),
+      ),
     );
   }
 }
