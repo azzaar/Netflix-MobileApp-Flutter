@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/core/colors/colors.dart';
 import 'package:my_app/core/constant.dart';
+import 'package:my_app/presentation/serach/widget/search_title.dart';
 
 const imageUrl =
     'https://www.themoviedb.org/t/p/w250_and_h141_face/uzIGtyS6bbnJzGsPL93WCF1FWm8.jpg';
@@ -14,10 +15,7 @@ class SearchScreenTile extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          "Top Searches",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
+        const SearchTitleWidget(title: "Top Searches"),
         Expanded(
           child: ListView.separated(
             shrinkWrap: true,

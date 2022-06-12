@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/core/colors/colors.dart';
 import 'package:my_app/core/constant.dart';
-import 'package:my_app/presentation/serach/widget/serach_screen_idle.dart';
+import 'package:my_app/presentation/serach/widget/search_result.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class SearchScreen extends StatelessWidget {
               style: const TextStyle(color: kWhite),
             ),
             sizedHeight20,
-            const Expanded(child: SearchScreenTile())
+            const Expanded(child: SearchResultScreen())
           ],
         ),
       )),
